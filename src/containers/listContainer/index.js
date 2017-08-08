@@ -2,8 +2,10 @@ import { h, Component } from 'preact';
 import Prompt from '../../components/prompt';
 import ShoppingList from '../../components/shoppingList';
 import PouchDB from 'pouchdb';
+import Credentials from '../../secret.js';
 
 const localDB = new PouchDB('shopping_list');
+const remoteDB = new PouchDB(Credentials.cloudant_url);
 
 class ListContainer extends Component {
   constructor(props) {
