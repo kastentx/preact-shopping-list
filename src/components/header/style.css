@@ -1,22 +1,14 @@
 .header {
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 56px;
-	padding: 0;
-	background: #673AB7;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-	z-index: 50;
-	text-transform: uppercase;
+  background-color: #2d3e50;
+  padding: 15px;
+  margin-bottom: 2%;
+  color: white;
+  text-align: left;
+  text-transform: uppercase;
 }
 
-.header h1 {
-	float: left;
-	margin: 0;
-	padding: 0 15px;
-	font-size: 24px;
-	line-height: 56px;
-	font-weight: 400;
-	color: #FFF;
+.header h2 {
+  margin: 0;
+	font-size: 150%;
+	font-weight: normal;
 }
