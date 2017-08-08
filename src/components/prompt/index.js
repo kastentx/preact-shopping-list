@@ -5,7 +5,7 @@ import 'preact-material-components/Textfield/style.css';
 
 export default function Prompt(props) {
   return (
-    <form onSubmit={props.onSubmit} class={style.test}>
+    <form onSubmit={props.onSubmit} class={style.textInput}>
       <div class="form-control" >
         <Textfield
           id="item"

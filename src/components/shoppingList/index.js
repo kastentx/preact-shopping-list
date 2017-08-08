@@ -5,7 +5,7 @@ import style from './style';
 
 export default function ShoppingList(props) {
   return (
-    <div class={style.test}>
+    <div class={style.list}>
       {props.children ? <List>{props.children}</List> : <p>EMPTY SHOPPING LIST</p>}
     </div>
   );
