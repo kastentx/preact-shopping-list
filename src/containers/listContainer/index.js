@@ -1,8 +1,10 @@
 import { h, Component } from 'preact';
+import Item from '../../components/item';
 import Prompt from '../../components/prompt';
 import ShoppingList from '../../components/shoppingList';
 import PouchDB from 'pouchdb';
 import Credentials from '../../secret.js';
+import style from './style';
 
 const localDB = new PouchDB('shopping_list');
 const remoteDB = new PouchDB(Credentials.cloudant_url);
@@ -19,7 +21,7 @@ class ListContainer extends Component {
   componentDidMount = () => {
     this.getPouchDocs();
     localDB.sync(remoteDB, {live: true, retry: true})
-      .on('change',  change => console.log('something changed!'))
+      .on('change', change => console.log('something changed!'))
       .on('paused', info => console.log('replication paused.'))
       .on('active', info => console.log('replication resumed.'))
       .on('error', err => console.log('uh oh! an error occured.'));
@@ -81,9 +83,9 @@ class ListContainer extends Component {
     return this.state.items.slice().map(item => <Item key={item._id} id={item._id} text={item.text} delDoc={this.delPouchDoc}/>);
   }
 
-  render() {
+  render(props, state) {
     return (
-      <div>
+      <div class="listContainer">
         <Prompt />
         <ShoppingList>
           {this.renderListItems()}
