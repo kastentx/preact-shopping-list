@@ -1,9 +1,12 @@
 import preact from 'preact';
+import List from 'preact-material-components/List';
+import 'preact-material-components/List/style.css';
+import style from './style';
 
 export default function ShoppingList(props) {
   return (
-    <div>
-      {props.children ? <ul>{props.children}</ul> : <p>EMPTY SHOPPING LIST</p>}
+    <div class={style.test}>
+      {props.children ? <List>{props.children}</List> : <p>EMPTY SHOPPING LIST</p>}
     </div>
   );
 }

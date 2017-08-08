@@ -85,8 +85,12 @@ class ListContainer extends Component {
 
   render(props, state) {
     return (
-      <div class="listContainer">
-        <Prompt />
+      <div>
+        <Prompt
+          value={state.input}
+          onChange={this.handleChange}
+          onSubmit={this.handleSubmit}
+        />
         <ShoppingList>
           {this.renderListItems()}
         </ShoppingList>
