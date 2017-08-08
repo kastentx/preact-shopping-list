@@ -1,15 +1,17 @@
 import preact from 'preact';
+import Textfield from 'preact-material-components/Textfield';
+import 'preact-material-components/Textfield/style.css';
 
 export default function Prompt(props) {
   return (
     <form onSubmit={props.onSubmit}>
-      <div class="form-group row" >
-        <input
+      <div class="form-control" >
+        <Textfield
           onChange={props.onChange}
           value={props.value}
-          class="form-control"
-          placeholder="add an item..."
-          type="text"
+          multiline={false}
+          helptext={true}
+          label="add an item..."
         />
       </div>
     </form>
