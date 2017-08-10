@@ -5,17 +5,16 @@ import 'preact-material-components/Textfield/style.css';
 
 export default function Prompt(props) {
   return (
-    <form onSubmit={props.onSubmit} class={style.textInput}>
-      <div class="form-control" >
-        <Textfield
-          id="item"
-          label="add an item..."
-          onChange={props.onChange}
-          value={props.value}
-          multiline={false}
-          fullwidth={true}
-        />
-      </div>
-    </form>
+    <div class={style.textInput}>
+      <form onSubmit={props.onSubmit}>
+          <Textfield
+            label="add an item..."
+            onChange={props.onChange}
+            value={props.value}
+            multiline={false}
+            fullwidth={true}
+          />
+      </form>
+    </div>
   );
 }
