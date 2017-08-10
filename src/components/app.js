@@ -1,14 +1,14 @@
-import { h, Component } from 'preact';
+import preact from 'preact';
 import Header from './header';
 import ListContainer from '../containers/listContainer';
+import Footer from './footer';
 
-export default class App extends Component {
-	render() {
-		return (
-			<div id="app">
-				<Header />
-				<ListContainer />
-			</div>
-		);
-	}
+export default function App(props) {
+	return (
+		<div id="app">
+			<Header />
+			<ListContainer />
+			<Footer />
+		</div>
+	);
 }
