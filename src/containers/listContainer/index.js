@@ -21,7 +21,10 @@ class ListContainer extends Component {
   componentDidMount = () => {
     this.getPouchDocs();
     localDB.sync(remoteDB, {live: true, retry: true})
-      .on('change', change => console.log('something changed!'))
+      .on('change', change => {
+        console.log('something changed!');
+        this.getPouchDocs();
+      })
       .on('paused', info => console.log('replication paused.'))
       .on('active', info => console.log('replication resumed.'))
       .on('error', err => console.log('uh oh! an error occured.'));
