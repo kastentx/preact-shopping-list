@@ -8,7 +8,7 @@ export default function Prompt(props) {
     <div class={style.textInput}>
       <form onSubmit={props.onSubmit}>
           <Textfield
-            label="add an item..."
+            placeholder="add an item..."
             onChange={props.onChange}
             value={props.value}
             multiline={false}
